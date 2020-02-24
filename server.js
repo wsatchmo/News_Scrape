@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 // Handlebars
 var exphbs = require("express-handlebars");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Init Express
 var app = express();
