@@ -1,0 +1,25 @@
+.inline-btn{
+    display: inline;
+}
+
+div.card{
+    float: left;
+    margin: 1%;
+}
+
+#wrapper {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+.btn{
+    margin: 10px;
+    box-shadow: 3px 3px 5px rgb(51, 51, 51);
+}
+
+textarea {
+    height: 200px;
+    font-size: 18px;
+}
