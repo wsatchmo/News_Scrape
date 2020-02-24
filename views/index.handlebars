@@ -1,21 +1,24 @@
-<h1>Educational News Scraper</h1>
-<h3><i>All the news that's fit to learn.</i></h3>
-<button class="btn btn-primary" id="scrape" onclick="location.href=window.location.href + 'scrape';">Scrape</button>
-<div id="articles">
-    {{#each articles}}
-        <div class="card" style="width: 18rem;">
-            {{#if this.image}}
-                <img  src="{{this.image}}" style="width: 100%; height: 100%">
-            {{/if}}
-            {{#if this.video}}
-                <iframe class="video-box"  src="{{this.video}}" style="width: 100%; height: 100%"></iframe>
-            {{/if}}
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text">{{this.title}}</p>
-                <a href="articles/{{this._id}}" class="btn btn-info inline-btn">View Article</a>
-                <a href="{{this.link}}" target="_blank" class="btn btn-warning inline-btn">Original</a>
+<div id="wrapper">
+    <h1 style="margin-left: 10px;">Educational News Scraper</h1>
+    <h3 style="margin-left: 10px;"><i>All the news that's fit to learn.</i></h3>
+    <button class="btn btn-info" id="scrape-open" onclick="location.href=window.location.href + 'scrape/openculture';">Scrape OpenCulture</button>
+    <button class="btn btn-primary" id="scrape-science" onclick="location.href=window.location.href + 'scrape/sciencenews';">Scrape ScienceNews</button>
+    <div id="articles">
+        {{#each articles}}
+            <div class="card" style="width: 18rem;">
+                {{#if this.image}}
+                    <img  src="{{this.image}}" style="width: 100%; height: auto">
+                {{/if}}
+                {{#if this.video}}
+                    <iframe class="video-box"  src="{{this.video}}"></iframe>
+                {{/if}}
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">{{this.title}}</p>
+                    <a href="articles/{{this._id}}" class="btn btn-info inline-btn">View Article</a>
+                    <a href="{{this.link}}" target="_blank" class="btn btn-warning inline-btn">Original</a>
+                </div>
             </div>
-        </div>
-    {{/each}}
+        {{/each}}
+    </div>
 </div>
