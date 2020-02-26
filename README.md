@@ -4,7 +4,7 @@
 + How it works +
 ```
 
-  - When a user visits EduNews site, they can scrape stories from Openculture and ScienceNews and display them for the user. Each scraped article is saved to a mongoDB database. 
+  - When a user visits the EduNews site, they can scrape stories from Openculture and ScienceNews and display them to the home page. Each scraped article is saved to a mongoDB database. 
   The app will scrape for the following information:
 
      * Headline/Summary - the title of the article/a short summary of the article
@@ -25,7 +25,7 @@ This project is deployed on Heroku at [sheltered-coast-01541.herokuapp.com](http
 - Notes -
 ```
 
-* Currently any comment may be deleted by any user; user-specific comment editing or deletion requires an authorization method, which may be a project for the future
+* Currently any comment may be deleted by any user; user-specific comment editing or deletion requires an authorization method, which may be a project addition for the future
 
 * If downloading for personal use, you may need to change the database information, found in the **server.js** file -- shown below:
 
