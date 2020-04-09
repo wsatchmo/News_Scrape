@@ -1,10 +1,10 @@
-# News_Scrape
+# ScrapeScience
 
 ```diff
 + How it works +
 ```
 
-  - When a user visits the EduNews site, they can scrape stories from Openculture and ScienceNews and display them to the home page. Each scraped article is saved to a mongoDB database. 
+  - When a user visits the ScrapeScience site, they can scrape stories from Openculture and ScienceNews and display them to the home page. Each scraped article is saved to a mongoDB database. 
   The app will scrape for the following information:
 
      * Headline/Summary - the title of the article/a short summary of the article
