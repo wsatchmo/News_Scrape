@@ -18,8 +18,9 @@ router.get("/",function(req,res){
         }
         // Otherwise, send the body to the browser as a json object
         else {
-            //console.log("Articles: ", body);
-            res.render("index", {articles: body});
+          //console.log("Articles: ", body);   
+          // console.log(body);
+          res.render("index", {articles: body.reverse()});
         }
     });
 });
@@ -67,12 +68,12 @@ router.get("/scrape/openculture", function(req, res) {
           .children("img")
           .attr("src");
           
-        if (result.video !== undefined){
-          console.log("VIDEO: ", result.video);
-        } else {
-          console.log("IMAGE: ", result.image);
-        }  
-          console.log("------------------");
+        // if (result.video !== undefined){
+        //   console.log("VIDEO: ", result.video);
+        // } else {
+        //   console.log("IMAGE: ", result.image);
+        // }  
+        //   console.log("------------------");
   
 
         Article.findOne({title:result.title},function(err,data){
@@ -82,7 +83,7 @@ router.get("/scrape/openculture", function(req, res) {
                 Article.create(result)
                 .then(function(dbArticle) {
                 // View the added result in the console
-                console.log(dbArticle);
+                // console.log(dbArticle);
                 })
                 .catch(function(err) {
                 // If an error occurred, log it
@@ -90,7 +91,7 @@ router.get("/scrape/openculture", function(req, res) {
                 });
 
             } else { //Otherwise, log that it exists
-                console.log("this aritcle is already in db: "+ data.title);
+                console.log("This article is already in the db: "+ data.title);
             }
         });  
       });
@@ -134,7 +135,7 @@ router.get("/scrape/sciencenews", function(req, res) {
           .children("img")
           .attr("src");
         
-          console.log("IMAGE: ", result.image);
+          // console.log("IMAGE: ", result.image);
 
         Article.findOne({title:result.title},function(err,data){
             //Check if the title already exists in the db
@@ -143,7 +144,7 @@ router.get("/scrape/sciencenews", function(req, res) {
                 Article.create(result)
                 .then(function(dbArticle) {
                 // View the added result in the console
-                console.log(dbArticle);
+                // console.log(dbArticle);
                 })
                 .catch(function(err) {
                 // If an error occurred, log it
@@ -151,7 +152,7 @@ router.get("/scrape/sciencenews", function(req, res) {
                 });
 
             } else { //Otherwise, log that it exists
-                console.log("this aritcle is already in db: "+ data.title);
+                console.log("This article is already in the db: "+ data.title);
             }
         });  
       });

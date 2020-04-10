@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 // Handlebars
 var exphbs = require("express-handlebars");
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 // Init Express
 var app = express();
@@ -31,11 +31,11 @@ var db = mongoose.connection;
 
 // In case of mongoose errors
 db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
+  console.warn("Mongoose Error: ", error);
 });
 // Otherwise log a success message
 db.once("open", function() {
-  console.log("Mongoose connection successful.");
+  console.info("Mongoose connection successful.");
 });
 
 //Routes
